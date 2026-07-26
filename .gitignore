@@ -8,15 +8,15 @@ venv/
 env/
 .env/
 
-# Database files
-database/*.db
+# Database files (tracked for cloud deployment)
+# database/*.db
 
-# Model artifacts
-models/*.joblib
+# Model artifacts (tracked for cloud deployment)
+# models/*.joblib
 
-# Generated data
-data/raw/*.csv
-data/processed/*.csv
+# Generated data (tracked for cloud deployment)
+# data/raw/*.csv
+# data/processed/*.csv
 
 # IDE
 .vscode/

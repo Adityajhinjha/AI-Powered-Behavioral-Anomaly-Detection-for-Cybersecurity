@@ -134,10 +134,45 @@ def main():
             )
 
         st.info(
-            "Run the pipeline to initialize the system: "
-            "`python -m src.data_generator` -> `python -m src.feature_engineering` "
-            "-> `python -m src.train_detector` -> `python -m src.train_classifier` -> `python -m src.predict`"
+            "System artifacts missing. Click the button below to initialize the pipeline directly, or run manually:\n"
+            "`python -m src.data_generator` ➔ `python -m src.feature_engineering` "
+            "➔ `python -m src.train_detector` ➔ `python -m src.train_classifier` ➔ `python -m src.predict`"
         )
+        
+        if st.button("🚀 Initialize Pipeline & Train Models", type="primary", use_container_width=True):
+            status_container = st.empty()
+            progress_bar = st.progress(0)
+            
+            try:
+                status_container.info("Step 1/5: Generating synthetic telemetry data...")
+                import src.data_generator as dg
+                dg.generate_all()
+                progress_bar.progress(20)
+                
+                status_container.info("Step 2/5: Engineering behavioral features...")
+                import src.feature_engineering as fe
+                fe.extract_features()
+                progress_bar.progress(40)
+                
+                status_container.info("Step 3/5: Training Isolation Forest anomaly detector...")
+                import src.train_detector as td
+                td.train()
+                progress_bar.progress(60)
+                
+                status_container.info("Step 4/5: Training XGBoost multi-class classifier...")
+                import src.train_classifier as tc
+                tc.train()
+                progress_bar.progress(80)
+                
+                status_container.info("Step 5/5: Running predictions & SHAP explainability...")
+                import src.predict as pred
+                pred.predict_batch()
+                progress_bar.progress(100)
+                
+                status_container.success("✅ System Pipeline Initialized Successfully!")
+                st.rerun()
+            except Exception as e:
+                status_container.error(f"Error during initialization: {str(e)}")
 
     st.markdown("<hr>", unsafe_allow_html=True)
 
