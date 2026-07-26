@@ -1,6 +1,7 @@
 # 🛡️ Behavioral Anomaly Detection System
 
-**Repository:** [https://github.com/Adityajhinjha/AI-Powered-Behavioral-Anomaly-Detection-for-Cybersecurity](https://github.com/Adityajhinjha/AI-Powered-Behavioral-Anomaly-Detection-for-Cybersecurity)
+🚀 **Live Streamlit App:** [https://ai-powered-behavioral-anomaly-detection-for-cybersecurity-sd.streamlit.app/](https://ai-powered-behavioral-anomaly-detection-for-cybersecurity-sd.streamlit.app/)  
+💻 **GitHub Repository:** [https://github.com/Adityajhinjha/AI-Powered-Behavioral-Anomaly-Detection-for-Cybersecurity](https://github.com/Adityajhinjha/AI-Powered-Behavioral-Anomaly-Detection-for-Cybersecurity)
 
 An end-to-end machine learning system that models "normal" access and connection behavior for users and devices, detects intrusions or compromised credential activity in near real-time, and classifies the type of anomaly with an explainable risk score — presented through an interactive SOC analyst dashboard.
 
