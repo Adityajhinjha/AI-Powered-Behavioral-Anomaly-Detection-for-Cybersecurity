@@ -1,0 +1,12 @@
+pandas
+numpy
+faker
+scikit-learn
+xgboost
+shap
+streamlit
+streamlit-option-menu
+plotly
+joblib
+geopy
+imbalanced-learn
